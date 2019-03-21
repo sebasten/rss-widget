@@ -50,16 +50,16 @@ class plusrss extends WP_Widget {
         if (substr($_SERVER['REQUEST_URI'],-10) != 'bulletins/') {
             if (preg_match('/tag/',$_SERVER['REQUEST_URI'])) {
                 echo '<li class="cat-item cat-item2"><a href="https://'.
-                    $_SERVER[HTTP_HOST].
-                    $_SERVER[REQUEST_URI].
+                    $_SERVER['HTTP_HOST'].
+                    $_SERVER['REQUEST_URI'].
                     $feed.
                     '">'.
                     RSS_FLUXTAG.
                     '</a></li>'; 
             } elseif (preg_match('/category/',$_SERVER['REQUEST_URI'])) {
                 echo '<li class="cat-item cat-item2"><a href="https://'.
-                    $_SERVER[HTTP_HOST].
-                    $_SERVER[REQUEST_URI].
+                    $_SERVER['HTTP_HOST'].
+                    $_SERVER['REQUEST_URI'].
                     $feed.
                     '">'
                     .RSS_FLUXCAT.
